@@ -54,10 +54,21 @@ public class App
                 }
             }
 
-            /* Creación de documentoFinal */
+            /* Creación de finalDocument */
             DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
             Document finalDocument = documentBuilder.newDocument();
+            /* Root implementado en el documentoFinal */
+            Element root = finalDocument.createElement("root");
+            finalDocument.appendChild(root);
+
+            /* Recorro los documentos de alarmas, devuelven sus elementos, los importo y 
+            los paso a un nodo final (finalConcesionario) */
+            for (Document document : alarmas) {
+                Element concesionario = document.getDocumentElement();
+                Node finalConcesionario = finalDocument.importNode(concesionario, true);
+                root.appendChild(finalConcesionario);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
