@@ -1,0 +1,31 @@
+<NissanEsforzao>
+    <operaciones>
+        <operacion tipo="venta">
+            <idAgente></idAgente>
+            <fecha></fecha>
+            <precio></precio>
+            <cliente>
+                <nombre></nombre>
+                <apellidos></apellidos>
+            </cliente>
+        </operacion>
+        <operacion tipo="reparacion">
+            <idAgente></idAgente>
+            <fecha></fecha>
+            <precio></precio>
+            <cliente>
+                <nombre></nombre>
+                <apellidos></apellidos>
+            </cliente>
+        </operacion>
+        <operacion tipo="reparacion">
+            <idAgente></idAgente>
+            <fecha></fecha>
+            <precio></precio>
+            <cliente>
+                <nombre></nombre>
+                <apellidos></apellidos>
+            </cliente>
+        </operacion>
+    </operaciones>
+</NissanEsforzao>
