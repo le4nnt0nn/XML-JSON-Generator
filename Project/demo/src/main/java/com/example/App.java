@@ -26,10 +26,12 @@ public class App
     public static void main( String[] args )
     {
         try {
-            /* Recolección de ficheros xml en Lista */
+            
+            /* Apunte a ficheros xml */
             File file = new File("./src/xmls");
             File[] xmls = file.listFiles();
 
+            /* Recolección de ficheros xml en Lista */
             List<Document> documents = new ArrayList<Document>();
             for(int i=0; i<xmls.length; i++){
                 File xml = xmls[i];
@@ -37,8 +39,18 @@ public class App
                 documents.add(document);
             }
 
+            /* Creación de xpath */
             XPath xPath = XPathFactory.newInstance().newXPath();
             
+            /* Creación de Lista alarmas (recoge todos los docs < 5 operaciones) */
+            List<Document> alarmas = new ArrayList<Document>();
+            /* Recoger todos los documentos con menos de 5 operaciones */
+            for (Document document : documents) {
+                NodeList nodosOperacion = (NodeList) xPath.compile("//operacion").evaluate(document, XPathConstants.NODESET);
+                if(nodosOperacion.getLength() < 5){
+                    alarmas.add(document);
+                }
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
