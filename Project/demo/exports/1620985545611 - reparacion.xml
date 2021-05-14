@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><root><operacion tipo="reparacion">
+            <idAgente/>
+            <fecha/>
+            <precio/>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion><operacion tipo="reparacion">
+            <idAgente/>
+            <fecha/>
+            <precio/>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion><operacion tipo="reparacion">
+            <idAgente/>
+            <fecha/>
+            <precio/>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion><operacion tipo="reparacion">
+            <idAgente/>
+            <fecha/>
+            <precio/>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion><operacion tipo="reparacion">
+            <idAgente/>
+            <fecha/>
+            <precio/>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion></root>
