@@ -1,6 +1,8 @@
 package com.example.util;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,6 +22,8 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -138,6 +142,44 @@ public class xmlUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        
     }
-    
+
+    public static void genConcesionarioJSON(List<Document> documents) throws XPathExpressionException {
+        /* Creación de xpath */
+        XPath xPath = XPathFactory.newInstance().newXPath();
+
+        /* Creación de array operaciones */
+        JSONArray operaciones = new JSONArray();
+
+        /* Creación de JSON root y adición de operaciones*/
+        JSONObject json = new JSONObject();
+        json.put("operaciones", operaciones);
+
+        /* Creación de JSON precio */
+        JSONObject precio = new JSONObject();
+
+        /* Recorre los nodos operacion */
+        for (Document document : documents) {
+            NodeList nodosPrecio = (NodeList) xPath.compile("//precio").evaluate(document, XPathConstants.NODESET);
+            for(int i=0; i < nodosPrecio.getLength(); i++){
+                Node nodoPrecio = nodosPrecio.item(i);
+                String precioText = nodoPrecio.getTextContent();
+                precio.put("precio", precioText);
+                operaciones.put(precio);
+            }
+        }
+
+        /* Escribir y pintar JSON */
+        try{
+            FileWriter jsonFile = new FileWriter("exports/operaciones.json");
+            jsonFile.write(json.toString());
+            jsonFile.flush();
+            jsonFile.close();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+        System.out.println(json.toString());
+   }
 }
