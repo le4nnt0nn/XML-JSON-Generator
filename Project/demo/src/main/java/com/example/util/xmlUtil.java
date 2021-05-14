@@ -40,7 +40,22 @@ public class xmlUtil {
         } catch (Exception e) {
             System.out.println(e.getCause().getMessage());
         }
+    }
 
+    /* Obtener documento XML dada una ruta relativa */
+    public static Document getXMLDocument(String path) {
+        Document doc = null;
+
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            // Path donde se ubica el archivo
+            doc = builder.parse(path);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return doc;
     }
     
 }
