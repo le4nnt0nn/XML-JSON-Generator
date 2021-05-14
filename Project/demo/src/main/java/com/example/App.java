@@ -12,6 +12,8 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Element;
 import org.w3c.dom.Text;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
@@ -51,6 +53,11 @@ public class App
                     alarmas.add(document);
                 }
             }
+
+            /* Creación de documentoFinal */
+            DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
+            Document finalDocument = documentBuilder.newDocument();
 
         } catch (Exception e) {
             e.printStackTrace();
