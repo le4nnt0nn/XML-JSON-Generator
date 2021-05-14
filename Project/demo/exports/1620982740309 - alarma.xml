@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><root><oSeatJelou>
+    <operaciones>
+        <operacion tipo="venta">
+            <idAgente/>
+            <fecha/>
+            <precio/>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion>
+        <operacion tipo="reparacion">
+            <idAgente/>
+            <fecha/>
+            <precio/>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion>
+    </operaciones>
+</oSeatJelou><NissanEsforzao>
+    <operaciones>
+        <operacion tipo="venta">
+            <idAgente/>
+            <fecha/>
+            <precio/>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion>
+        <operacion tipo="reparacion">
+            <idAgente/>
+            <fecha/>
+            <precio/>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion>
+        <operacion tipo="reparacion">
+            <idAgente/>
+            <fecha/>
+            <precio/>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion>
+    </operaciones>
+</NissanEsforzao></root>
