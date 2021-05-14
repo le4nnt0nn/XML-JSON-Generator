@@ -26,6 +26,7 @@ import org.w3c.dom.NodeList;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Text;
 
 public class xmlUtil {
@@ -96,6 +97,47 @@ public class xmlUtil {
         /* Escribe y exporta el contenido de finalDocument con el sufijo alarma */
         xmlUtil.writeDocument(finalDocument, "alarma");
 
+    }
+
+    public static void exportByOperacionType(List<Document> documents, Document ventasDocument, Document reparacionesDocument){
+        try {
+            /* Creación de xpath */
+            XPath xPath = XPathFactory.newInstance().newXPath();
+
+            /* Asignación root para ventasDocument */
+            Element ventasRoot = ventasDocument.createElement("root");
+            ventasDocument.appendChild(ventasRoot);
+
+            /* Asignación root para reparacionesDocument */
+            Element reparacionesRoot = reparacionesDocument.createElement("root");
+            reparacionesDocument.appendChild(reparacionesRoot);
+
+            /* Recorrer documents y sacar las operaciones según su atributo (venta o reparación)*/
+            for (Document document : documents) {
+                NodeList nodosOperacion = (NodeList) xPath.compile("//operacion").evaluate(document, XPathConstants.NODESET);
+                for(int i=0; i < nodosOperacion.getLength(); i++){
+                    Node nodoOperacion = nodosOperacion.item(i);
+                    /* Recoge los atributos de operacion llamados "tipo" */
+                    NamedNodeMap attributesMap = nodoOperacion.getAttributes();
+                    String type = attributesMap.getNamedItem("tipo").getNodeValue();
+                    if(type.equals("venta")){
+                        Node finalVenta = ventasDocument.importNode(nodoOperacion, true);
+                        ventasRoot.appendChild(finalVenta);
+                    } else if(type.equals("reparacion")){
+                        Node finalReparacion = reparacionesDocument.importNode(nodoOperacion, true);
+                        reparacionesRoot.appendChild(finalReparacion);
+                    }
+                }
+            }
+
+            /* Escribe y exporta el contenido de ventasDocument con el sufijo venta */
+            xmlUtil.writeDocument(ventasDocument, "venta");
+            /* Escribe y exporta el contenido de reparacionesDocument con el sufijo reparacion */
+            xmlUtil.writeDocument(reparacionesDocument, "reparacion");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     
 }
