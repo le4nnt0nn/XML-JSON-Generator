@@ -48,7 +48,10 @@ public class App
             }
 
             /* Pintar en un xml concesionarios con menos de 5 operaciones */
-            //xmlUtil.exportConcesionarioAlarma(documents);
+            xmlUtil.exportConcesionarioAlarma(documents);
+
+             /* Generar dos XMLs de salida, uno con todas las
+            operaciones de tipo venta y otro con todas las operaciones de tipo reparación */
 
             /* Creación de ventasDocument */
             Document ventasDocument = documentBuilder.newDocument();
@@ -56,49 +59,15 @@ public class App
             /* Creación de operacionesDocument */
             Document reparacionesDocument = documentBuilder.newDocument();
 
-             /* Generar dos XMLs de salida, uno con todas las
-            operaciones de tipo venta y otro con todas las operaciones de tipo reparación */
-            //xmlUtil.exportByOperacionType(documents, ventasDocument, reparacionesDocument);
+            xmlUtil.exportByOperacionType(documents, ventasDocument, reparacionesDocument);
             
             /* Pintar JSON con todas las operaciones y sus respectivos precios de todos los concesionarios */
-
-            /* Creación de xpath */
-            XPath xPath = XPathFactory.newInstance().newXPath();
-
-            /* Creación de array operaciones */
-            JSONArray operaciones = new JSONArray();
-
-            /* Creación de JSON root y adición de operaciones*/
-            JSONObject json = new JSONObject();
-            json.put("operaciones", operaciones);
-
-            /* Creación de JSON precio */
-            JSONObject precio = new JSONObject();
-
-            /* Recorre los nodos operacion */
-            for (Document document : documents) {
-                NodeList nodosPrecio = (NodeList) xPath.compile("//precio").evaluate(document, XPathConstants.NODESET);
-                for(int i=0; i < nodosPrecio.getLength(); i++){
-                    Node nodoPrecio = nodosPrecio.item(i);
-                    String precioText = nodoPrecio.getTextContent();
-                    precio.put("precio", precioText);
-                    operaciones.put(precio);
-                }
-            }
-
-            /* Escribir y pintar JSON */
-            try{
-                FileWriter jsonFile = new FileWriter("exports/operaciones.json");
-                jsonFile.write(json.toString());
-                jsonFile.flush();
-                jsonFile.close();
-                }catch(IOException e){
-                    e.printStackTrace();
-                }
-                System.out.println(json.toString());
+            xmlUtil.genConcesionarioJSON(documents);
+           
         
-            } catch (Exception e) {
-            e.printStackTrace();
-            }
+        } catch (Exception e) {
+        e.printStackTrace();
+        }
+            
     }
 }
