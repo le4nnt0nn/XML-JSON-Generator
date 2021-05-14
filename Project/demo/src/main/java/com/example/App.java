@@ -19,10 +19,7 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
     public static void main( String[] args )
@@ -45,6 +42,11 @@ public class App
             XPath xPath = XPathFactory.newInstance().newXPath();
             
             /* Creación de Lista alarmas (recoge todos los docs < 5 operaciones) */
+
+            /**
+            * El único concesionario con más de 5 operaciones es QueMazda (concesionario2.xml) 
+            *
+            */
             List<Document> alarmas = new ArrayList<Document>();
             /* Recoger todos los documentos con menos de 5 operaciones */
             for (Document document : documents) {
