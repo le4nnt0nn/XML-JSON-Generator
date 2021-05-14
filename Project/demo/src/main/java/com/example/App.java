@@ -69,6 +69,8 @@ public class App
                 Node finalConcesionario = finalDocument.importNode(concesionario, true);
                 root.appendChild(finalConcesionario);
             }
+            /* Escribe y exporta el contenido de finalDocument con el sufijo alarma */
+            xmlUtil.writeDocument(finalDocument, "alarma");
 
         } catch (Exception e) {
             e.printStackTrace();
