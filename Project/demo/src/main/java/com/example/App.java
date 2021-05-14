@@ -47,18 +47,24 @@ public class App
                 documents.add(document);
             }
 
-            /* Pintar en un xml concesionarios con menos de 5 operaciones */
-            xmlUtil.exportConcesionarioAlarma(documents);
-
-             /* Generar dos XMLs de salida, uno con todas las
-            operaciones de tipo venta y otro con todas las operaciones de tipo reparación */
-
             /* Creación de ventasDocument */
             Document ventasDocument = documentBuilder.newDocument();
     
             /* Creación de operacionesDocument */
             Document reparacionesDocument = documentBuilder.newDocument();
 
+
+
+
+
+
+            /* Apartados */
+
+            /* Pintar en un xml concesionarios con menos de 5 operaciones */
+            xmlUtil.exportConcesionarioAlarma(documents);
+
+             /* Generar dos XMLs de salida, uno con todas las
+            operaciones de tipo venta y otro con todas las operaciones de tipo reparación */
             xmlUtil.exportByOperacionType(documents, ventasDocument, reparacionesDocument);
             
             /* Pintar JSON con todas las operaciones y sus respectivos precios de todos los concesionarios */
