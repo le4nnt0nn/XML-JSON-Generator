@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><root><operacion tipo="venta">
+            <idAgente/>
+            <fecha/>
+            <precio>34.50</precio>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion><operacion tipo="venta">
+            <idAgente/>
+            <fecha/>
+            <precio>71.34</precio>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion><operacion tipo="venta">
+            <idAgente/>
+            <fecha/>
+            <precio>34.12</precio>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion><operacion tipo="venta">
+            <idAgente/>
+            <fecha/>
+            <precio>21.56</precio>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion><operacion tipo="venta">
+            <idAgente/>
+            <fecha/>
+            <precio>34.56</precio>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion><operacion tipo="venta">
+            <idAgente/>
+            <fecha/>
+            <precio>23.45</precio>
+            <cliente>
+                <nombre/>
+                <apellidos/>
+            </cliente>
+        </operacion></root>
