@@ -61,11 +61,11 @@ public class App
             /* Apartados */
 
             /* Pintar en un xml concesionarios con menos de 5 operaciones */
-            xmlUtil.exportConcesionarioAlarma(documents);
+            //xmlUtil.exportConcesionarioAlarma(documents);
 
              /* Generar dos XMLs de salida, uno con todas las
             operaciones de tipo venta y otro con todas las operaciones de tipo reparación */
-            xmlUtil.exportByOperacionType(documents, ventasDocument, reparacionesDocument);
+            //xmlUtil.exportByOperacionType(documents, ventasDocument, reparacionesDocument);
             
             /* Pintar JSON con todas las operaciones y sus respectivos precios de todos los concesionarios */
             xmlUtil.genConcesionarioJSON(documents);

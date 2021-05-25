@@ -155,21 +155,24 @@ public class xmlUtil {
 
         /* Creación de JSON root y adición de operaciones*/
         JSONObject json = new JSONObject();
-        json.put("operaciones", operaciones);
+        
 
-        /* Creación de JSON precio */
-        JSONObject precio = new JSONObject();
+        
 
         /* Recorre los nodos operacion */
         for (Document document : documents) {
             NodeList nodosPrecio = (NodeList) xPath.compile("//precio").evaluate(document, XPathConstants.NODESET);
             for(int i=0; i < nodosPrecio.getLength(); i++){
                 Node nodoPrecio = nodosPrecio.item(i);
-                String precioText = nodoPrecio.getTextContent();
+                /* Texto a Double */
+                Double precioText = Double.parseDouble(nodoPrecio.getTextContent());
+                /* Creación de JSON precio */
+                JSONObject precio = new JSONObject();
                 precio.put("precio", precioText);
                 operaciones.put(precio);
             }
         }
+        json.put("operaciones", operaciones);
 
         /* Escribir y pintar JSON */
         try{
