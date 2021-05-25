@@ -3,7 +3,7 @@
         <operacion tipo="venta">
             <idAgente></idAgente>
             <fecha></fecha>
-            <precio></precio>
+            <precio>23.45</precio>
             <cliente>
                 <nombre></nombre>
                 <apellidos></apellidos>
@@ -12,7 +12,7 @@
         <operacion tipo="reparacion">
             <idAgente></idAgente>
             <fecha></fecha>
-            <precio></precio>
+            <precio>45.78</precio>
             <cliente>
                 <nombre></nombre>
                 <apellidos></apellidos>
@@ -21,7 +21,7 @@
         <operacion tipo="reparacion">
             <idAgente></idAgente>
             <fecha></fecha>
-            <precio></precio>
+            <precio>32.67</precio>
             <cliente>
                 <nombre></nombre>
                 <apellidos></apellidos>

@@ -3,7 +3,7 @@
         <operacion tipo="venta">
             <idAgente></idAgente>
             <fecha></fecha>
-            <precio></precio>
+            <precio>71.34</precio>
             <cliente>
                 <nombre></nombre>
                 <apellidos></apellidos>
@@ -12,7 +12,7 @@
         <operacion tipo="venta">
             <idAgente></idAgente>
             <fecha></fecha>
-            <precio></precio>
+            <precio>34.12</precio>
             <cliente>
                 <nombre></nombre>
                 <apellidos></apellidos>
@@ -21,7 +21,7 @@
         <operacion tipo="venta">
             <idAgente></idAgente>
             <fecha></fecha>
-            <precio></precio>
+            <precio>21.56</precio>
             <cliente>
                 <nombre></nombre>
                 <apellidos></apellidos>
@@ -30,7 +30,7 @@
         <operacion tipo="venta">
             <idAgente></idAgente>
             <fecha></fecha>
-            <precio></precio>
+            <precio>34.56</precio>
             <cliente>
                 <nombre></nombre>
                 <apellidos></apellidos>
@@ -39,7 +39,7 @@
         <operacion tipo="reparacion">
             <idAgente></idAgente>
             <fecha></fecha>
-            <precio></precio>
+            <precio>89.78</precio>
             <cliente>
                 <nombre></nombre>
                 <apellidos></apellidos>
@@ -48,7 +48,7 @@
         <operacion tipo="reparacion">
             <idAgente></idAgente>
             <fecha></fecha>
-            <precio></precio>
+            <precio>25.50</precio>
             <cliente>
                 <nombre></nombre>
                 <apellidos></apellidos>
